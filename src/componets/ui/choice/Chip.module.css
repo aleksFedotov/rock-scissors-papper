@@ -1,0 +1,113 @@
+.chip {
+  border-radius: 50%;
+  position: absolute;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chip__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-score);
+  width: 16rem;
+  height: 16rem;
+  border-radius: 50%;
+  box-shadow: inset 0 7px 0 0 #b9bdd4;
+}
+
+.chip__img img {
+  display: block;
+  transform: scale(1.4);
+}
+
+.rock {
+  top: 60%;
+  left: 36%;
+
+  border: 20px solid transparent;
+  background-image: linear-gradient(var(--bg-score), var(--bg-score)),
+    radial-gradient(
+      circle at top left,
+      var(--rock-gradient-1),
+      var(--rock-gradient-2)
+    );
+
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+
+  box-shadow: 0 7px 0 0 #9c1731;
+}
+
+.scissors {
+  top: -33%;
+  left: 55%;
+
+  border: 20px solid transparent;
+  background-image: linear-gradient(var(--bg-score), var(--bg-score)),
+    radial-gradient(
+      circle at top left,
+      var(--scissors-gradient-1),
+      var(--scissors-gradient-2)
+    );
+
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+
+  box-shadow: 0 7px 0 0 #cb6d1d;
+}
+.papper {
+  top: -33%;
+  left: 13%;
+
+  border: 20px solid transparent;
+  background-image: linear-gradient(var(--bg-score), var(--bg-score)),
+    radial-gradient(
+      circle at top left,
+      var(--papper-gradient-1),
+      var(--papper-gradient-2)
+    );
+
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+
+  box-shadow: 0 7px 0 0 #2a45c3;
+}
+
+.lizard {
+  top: -33%;
+  left: 13%;
+
+  border: 20px solid transparent;
+  background-image: linear-gradient(var(--bg-score), var(--bg-score)),
+    radial-gradient(
+      circle at top left,
+      var(--liazrd-gradient-1),
+      var(--liazrd-gradient-2)
+    );
+
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+
+  box-shadow: 0 7px 0 0 #6439b3;
+}
+
+.spock {
+  top: -33%;
+  left: 13%;
+
+  border: 20px solid transparent;
+  background-image: linear-gradient(var(--bg-score), var(--bg-score)),
+    radial-gradient(
+      circle at top left,
+      var(--spock-gradient-1),
+      var(--spock-gradient-2)
+    );
+
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+
+  box-shadow: 0 7px 0 0 #2d8dab;
+}

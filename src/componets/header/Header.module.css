@@ -1,0 +1,33 @@
+.header {
+  max-width: 70rem;
+  width: 100%;
+  margin: 0 auto;
+  border: 3px solid var(--header-outline);
+  border-radius: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.6rem 2.3rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.score {
+  background-color: var(--bg-score);
+  border-radius: 1rem;
+  padding: 1.8rem 5rem;
+}
+
+.score__heading {
+  color: var(--score-text);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.score__text {
+  color: var(--header-outline);
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin-top: 0;
+}
