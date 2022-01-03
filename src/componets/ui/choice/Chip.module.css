@@ -1,3 +1,5 @@
+/* Default mode */
+
 .chip {
   border-radius: 50%;
   position: absolute;
@@ -5,6 +7,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+
+  border: 20px solid transparent;
+
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+
+  transition: all 0.3s ease;
+}
+
+.chip:active {
+  box-shadow: 0 0px 0 0 #cb6d1d;
+  transform: translateY(7px);
 }
 
 .chip__img {
@@ -15,99 +30,205 @@
   width: 16rem;
   height: 16rem;
   border-radius: 50%;
-  box-shadow: inset 0 7px 0 0 #b9bdd4;
+  box-shadow: inset 0 5px 0 0 #b9bdd4;
+  transition: all 0.3s ease;
+}
+
+.chip:active .chip__img {
+  box-shadow: inset 0 0 0 0 #b9bdd4;
 }
 
 .chip__img img {
-  display: block;
   transform: scale(1.4);
 }
 
 .rock {
   top: 60%;
-  left: 36%;
+  left: 14%;
 
-  border: 20px solid transparent;
-  background-image: linear-gradient(var(--bg-score), var(--bg-score)),
+  background-image: linear-gradient(transparent, transparent),
     radial-gradient(
       circle at top left,
       var(--rock-gradient-1),
       var(--rock-gradient-2)
     );
 
-  background-origin: border-box;
-  background-clip: content-box, border-box;
-
   box-shadow: 0 7px 0 0 #9c1731;
 }
 
-.scissors {
-  top: -33%;
-  left: 55%;
+.chip.rock:active {
+  box-shadow: 0 0px 0 0 #9c1731;
+  transform: translateY(7px);
+}
 
-  border: 20px solid transparent;
-  background-image: linear-gradient(var(--bg-score), var(--bg-score)),
+.scissors {
+  top: -47%;
+  right: -40%;
+
+  background-image: linear-gradient(transparent, transparent),
     radial-gradient(
       circle at top left,
       var(--scissors-gradient-1),
       var(--scissors-gradient-2)
     );
 
-  background-origin: border-box;
-  background-clip: content-box, border-box;
-
   box-shadow: 0 7px 0 0 #cb6d1d;
 }
-.papper {
-  top: -33%;
-  left: 13%;
 
-  border: 20px solid transparent;
-  background-image: linear-gradient(var(--bg-score), var(--bg-score)),
+.chip.scissors:active {
+  box-shadow: 0 0px 0 0 #cb6d1d;
+  transform: translateY(7px);
+}
+
+.papper {
+  top: -47%;
+  left: -40%;
+
+  background-image: linear-gradient(transparent, transparent),
     radial-gradient(
       circle at top left,
       var(--papper-gradient-1),
       var(--papper-gradient-2)
     );
 
-  background-origin: border-box;
-  background-clip: content-box, border-box;
-
   box-shadow: 0 7px 0 0 #2a45c3;
 }
 
-.lizard {
-  top: -33%;
-  left: 13%;
+.chip.papper:active {
+  box-shadow: 0 0px 0 0 #2a45c3;
+  transform: translateY(7px);
+}
 
-  border: 20px solid transparent;
-  background-image: linear-gradient(var(--bg-score), var(--bg-score)),
+.lizard {
+  background-image: linear-gradient(transparent, transparent),
     radial-gradient(
       circle at top left,
       var(--liazrd-gradient-1),
       var(--liazrd-gradient-2)
     );
 
-  background-origin: border-box;
-  background-clip: content-box, border-box;
-
   box-shadow: 0 7px 0 0 #6439b3;
 }
 
-.spock {
-  top: -33%;
-  left: 13%;
+.chip.lizard:active {
+  box-shadow: 0 0px 0 0 #6439b3;
+  transform: translateY(7px);
+}
 
-  border: 20px solid transparent;
-  background-image: linear-gradient(var(--bg-score), var(--bg-score)),
+.spock {
+  background-image: linear-gradient(transparent, transparent),
     radial-gradient(
       circle at top left,
       var(--spock-gradient-1),
       var(--spock-gradient-2)
     );
 
-  background-origin: border-box;
-  background-clip: content-box, border-box;
-
   box-shadow: 0 7px 0 0 #2d8dab;
+}
+
+.chip.spock:active {
+  box-shadow: 0 0px 0 0 #2d8dab;
+  transform: translateY(7px);
+}
+
+/* Bonus mode */
+
+.chip.bonus {
+  border: 15px solid transparent;
+}
+
+.bonus .chip__img {
+  width: 11rem;
+  height: 11rem;
+}
+
+.bonus.rock {
+  top: 73%;
+  left: 56%;
+}
+.bonus.scissors {
+  top: -19%;
+  right: 30%;
+}
+.bonus.papper {
+  top: 17%;
+  left: 75%;
+}
+.bonus.lizard {
+  top: 73%;
+  left: 0%;
+}
+.bonus.spock {
+  top: 17%;
+  right: 75%;
+}
+
+.bonus .chip__img img {
+  transform: scale(1);
+}
+
+@media (max-width: 650px) {
+  /* Default mode */
+  .chip {
+    border: 15px solid transparent;
+  }
+
+  .chip__img {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .chip__img img {
+    transform: scale(0.9);
+  }
+
+  .papper {
+    top: -10%;
+    left: -6%;
+  }
+
+  .scissors {
+    top: -10%;
+    right: -6%;
+  }
+
+  .rock {
+    top: 60%;
+    left: 26%;
+  }
+
+  /* Bonus mode */
+
+  .chip.bonus {
+    border: 10px solid transparent;
+  }
+  .bonus .chip__img {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .bonus .chip__img img {
+    transform: scale(0.75);
+  }
+
+  .bonus.rock {
+    top: 65%;
+    left: 56%;
+  }
+  .bonus.scissors {
+    top: 3%;
+    right: 34%;
+  }
+  .bonus.papper {
+    top: 25%;
+    left: 70%;
+  }
+  .bonus.lizard {
+    top: 65%;
+    left: 14%;
+  }
+  .bonus.spock {
+    top: 25%;
+    right: 70%;
+  }
 }

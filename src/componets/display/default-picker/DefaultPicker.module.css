@@ -1,0 +1,16 @@
+.picker {
+  width: 100%;
+  position: relative;
+  width: 28rem;
+  height: 24rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 650px) {
+  .picker__bg {
+    width: 18rem;
+    height: 16rem;
+  }
+}

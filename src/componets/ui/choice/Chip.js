@@ -30,11 +30,15 @@ const Chip = (props) => {
   }
 
   return (
-    <div className={`${styles.chip} ${styles[props.type]}`}>
+    <button
+      className={`${styles.chip} ${styles[props.type]} ${
+        props.mode && styles.bonus
+      }`}
+    >
       <div className={styles.chip__img}>
         <img src={ImgSource} alt="" />
       </div>
-    </div>
+    </button>
   );
 };
 
