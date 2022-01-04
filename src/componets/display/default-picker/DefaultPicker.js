@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import patern from '../../../utils/images/bg-triangle.svg';
 import styles from './DefaultPicker.module.css';
 

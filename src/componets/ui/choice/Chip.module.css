@@ -167,6 +167,21 @@
   transform: scale(1);
 }
 
+/* Result */
+.chip.result {
+  position: initial;
+  border: 35px solid transparent;
+}
+
+.result .chip__img {
+  width: 22rem;
+  height: 22rem;
+}
+
+.result .chip__img img {
+  transform: scale(1.8);
+}
+
 @media (max-width: 650px) {
   /* Default mode */
   .chip {

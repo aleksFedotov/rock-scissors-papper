@@ -1,0 +1,22 @@
+.result {
+  display: grid;
+  grid-template-areas: 'UserChoice Result HouseChoice';
+  align-items: center;
+  max-width: max-content;
+}
+
+.choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 3rem;
+  gap: 6rem;
+}
+
+.choice__header {
+  font-size: 2.4rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}

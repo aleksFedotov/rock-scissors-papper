@@ -20,14 +20,14 @@
 
 .score__heading {
   color: var(--score-text);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .score__text {
   color: var(--header-outline);
-  font-size: 4.5rem;
+  font-size: 5.4rem;
   font-weight: 700;
   margin-top: 0;
 }

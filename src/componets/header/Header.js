@@ -1,15 +1,16 @@
 import React from 'react';
 
 import styles from './Header.module.css';
-import RSPLogo from '../../utils/images/logo.svg';
-// import RSPLSLogo from '../../utils/images/logo-bonus.svg';
+import DefaultLogo from '../../utils/images/logo.svg';
+import BonusLogo from '../../utils/images/logo-bonus.svg';
 
 const Header = () => {
   const score = 12;
+  const mode = 'default';
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <img src={RSPLogo} alt="Logo" />
+        <img src={mode === 'default' ? DefaultLogo : BonusLogo} alt="Logo" />
       </div>
       <div className={styles.score}>
         <p className={styles.score__heading}>score</p>
