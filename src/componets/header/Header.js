@@ -6,7 +6,7 @@ import BonusLogo from '../../utils/images/logo-bonus.svg';
 
 const Header = () => {
   const score = 12;
-  const mode = 'default';
+  const mode = 'bonus';
   return (
     <header className={styles.header}>
       <div className={styles.logo}>

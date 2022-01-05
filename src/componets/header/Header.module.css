@@ -12,6 +12,17 @@
   text-align: center;
 }
 
+.logo {
+  width: 16rem;
+  height: 12rem;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 100%;
+}
+
 .score {
   background-color: var(--bg-score);
   border-radius: 1rem;
@@ -29,5 +40,26 @@
   color: var(--header-outline);
   font-size: 5.4rem;
   font-weight: 700;
-  margin-top: 0;
+}
+
+@media (max-width: 500px) {
+  .header {
+    padding: 1rem 1rem 1rem 2rem;
+  }
+
+  .score {
+    padding: 1.4rem 2.2rem;
+  }
+  .score__heading {
+    font-size: 1rem;
+  }
+
+  .score__text {
+    font-size: 3.2rem;
+  }
+
+  .logo {
+    width: 9rem;
+    height: 5rem;
+  }
 }

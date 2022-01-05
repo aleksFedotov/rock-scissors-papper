@@ -2,6 +2,7 @@
   display: grid;
   grid-template-areas: 'UserChoice Result HouseChoice';
   align-items: center;
+  justify-content: center;
   max-width: max-content;
 }
 
@@ -10,13 +11,121 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0 3rem;
-  gap: 6rem;
+}
+
+.choice_user {
+  grid-area: UserChoice;
+  margin-right: 2.5rem;
+}
+
+.choice_house {
+  grid-area: HouseChoice;
+  margin-left: 2.5rem;
 }
 
 .choice__header {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 2px;
+  margin-bottom: 6rem;
+}
+
+.status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-area: Result;
+  animation: appear 1s ease;
+}
+
+.status p {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fff;
+  font-size: 5rem;
+  margin-bottom: 1.4rem;
+}
+
+.status button {
+  width: 22rem;
+  height: 5rem;
+  border-radius: 1rem;
+  border: none;
+  background-color: var(--bg-score);
+  font-family: inherit;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  transition: transform 0.3s ease;
+}
+
+.status button:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.status button:active {
+  transform: scale(0.98);
+}
+
+.placeholder {
+  width: 22rem;
+  height: 22rem;
+  border-radius: 50%;
+  background: #17223e;
+  margin: 3.5rem;
+}
+
+@keyframes appear {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 930px) {
+  .choice__header {
+    margin-bottom: 4rem;
+    font-size: 1.8rem;
+  }
+
+  .status p {
+    font-size: 3.4rem;
+  }
+
+  .status button {
+    width: 16rem;
+    height: 4rem;
+
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .result {
+    grid-template-areas: 'UserChoice  HouseChoice' 'Result Result';
+  }
+
+  .choice {
+    flex-direction: column-reverse;
+  }
+
+  .choice__header {
+    margin-bottom: 8rem;
+    margin-top: 3rem;
+    font-size: 1.5rem;
+  }
+
+  .status p {
+    font-size: 5rem;
+  }
+
+  .status button {
+    width: 22rem;
+    height: 5rem;
+    font-size: 1.8rem;
+  }
 }

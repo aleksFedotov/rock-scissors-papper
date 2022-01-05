@@ -7,15 +7,30 @@ import styles from './Result.module.css';
 const Result = () => {
   const userChoice = 'scissors';
   const houseChoice = 'rock';
+
+  const result = 'You win';
   return (
     <div className={styles.result}>
-      <div className={`${styles.choice} ${styles.user_choice}`}>
+      <div className={`${styles.choice} ${styles.choice_user}`}>
         <p className={styles.choice__header}>You picked</p>
-        <Chip type={userChoice} result={true} />
+        <div>
+          <Chip type={userChoice} result={true} win={result === 'You win'} />
+        </div>
       </div>
-      <div className={`${styles.choice} ${styles.house_choice}`}>
+      {result && (
+        <div className={styles.status}>
+          <p>{result}</p>
+          <button>Play again</button>
+        </div>
+      )}
+
+      <div className={`${styles.choice}  ${styles.choice_house}`}>
         <p className={styles.choice__header}>The house picked</p>
-        <Chip type={houseChoice} result={true} />
+        {result ? (
+          <Chip type={houseChoice} result={true} win={result === 'You lost'} />
+        ) : (
+          <div className={styles.placeholder}></div>
+        )}
       </div>
     </div>
   );

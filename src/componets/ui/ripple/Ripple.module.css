@@ -1,0 +1,81 @@
+.container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  z-index: -1;
+}
+
+.ripple {
+  position: fixed;
+  animation: ripple-big 3.5s infinite;
+  border-radius: 100%;
+  border: none;
+  background-color: #2b3858;
+
+  transition: 0.33s ease-in all;
+  opacity: 0;
+}
+
+.ripple:nth-child(1) {
+  animation-delay: 0ms;
+}
+
+.ripple:nth-child(2) {
+  animation-delay: 750ms;
+}
+
+.ripple:nth-child(3) {
+  animation-delay: 1500ms;
+}
+
+@keyframes ripple-big {
+  0% {
+    width: 10rem;
+    height: 10rem;
+    opacity: 1;
+  }
+  100% {
+    width: 72rem;
+    height: 72rem;
+    opacity: 0;
+  }
+}
+
+@keyframes ripple-md {
+  0% {
+    width: 10rem;
+    height: 10rem;
+    opacity: 1;
+  }
+  100% {
+    width: 50rem;
+    height: 50rem;
+    opacity: 0;
+  }
+}
+
+@keyframes ripple-sm {
+  0% {
+    width: 10rem;
+    height: 10rem;
+    opacity: 1;
+  }
+  100% {
+    width: 28rem;
+    height: 28rem;
+    opacity: 0;
+  }
+}
+
+@media (max-width: 930px) {
+  .ripple {
+    animation: ripple-md 3.5s infinite;
+  }
+}
+@media (max-width: 650px) {
+  .ripple {
+    animation: ripple-sm 3.5s infinite;
+  }
+}

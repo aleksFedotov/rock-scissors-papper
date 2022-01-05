@@ -43,10 +43,11 @@ body {
   font-size: 1.8rem;
   line-height: 1.5;
   font-family: 'Barlow Semi Condensed', sans-serif;
-  background: linear-gradient(
-    to left,
-    var(--bg-gradient-1),
-    var(--bg-gradient-2)
+  background: radial-gradient(
+    circle at 50% 0%,
+    var(--bg-gradient-1) 15%,
+    var(--bg-gradient-2) 100%
   );
   padding: 2rem;
+  min-height: 100vh;
 }

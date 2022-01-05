@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Ripple from '../ripple/Ripple';
+
 import styles from './Chip.module.css';
 import rock from '../../../utils/images/icon-rock.svg';
 import scissors from '../../../utils/images/icon-scissors.svg';
@@ -8,7 +10,6 @@ import lizard from '../../../utils/images/icon-lizard.svg';
 import spock from '../../../utils/images/icon-spock.svg';
 
 const Chip = (props) => {
-  const result = true;
   let ImgSource;
   switch (props.type) {
     case 'rock':
@@ -34,10 +35,11 @@ const Chip = (props) => {
     <button
       className={`${styles.chip} ${styles[props.type]} ${
         props.mode && styles.bonus
-      } ${result && styles.result}`}
+      } ${props.result && styles.result}`}
     >
       <div className={styles.chip__img}>
         <img src={ImgSource} alt="" />
+        {props.win && <Ripple />}
       </div>
     </button>
   );

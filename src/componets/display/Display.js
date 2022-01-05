@@ -7,7 +7,7 @@ import Result from './result/Result';
 import styles from './Display.module.css';
 
 const Display = () => {
-  const mode = 'default';
+  const mode = 'bonus';
   const result = true;
 
   let content;
