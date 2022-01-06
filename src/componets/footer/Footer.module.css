@@ -1,0 +1,45 @@
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__icon {
+  color: #fff;
+  font-size: 2.4rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.footer__btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: 2px solid rgb(96, 110, 133);
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
+  font-size: 1.6rem;
+  font-weight: 600;
+  height: 4.5rem;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 13rem;
+  transition: transform 0.3s ease;
+}
+
+.footer__btn:hover,
+.footer__icon:hover {
+  transform: scale(1.05);
+}
+
+.footer__btn:active,
+.footer__icon:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 650px) {
+  .footer {
+    margin-top: 5rem;
+  }
+}

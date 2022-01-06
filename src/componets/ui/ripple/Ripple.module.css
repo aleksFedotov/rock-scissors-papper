@@ -1,14 +1,5 @@
-.container {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  z-index: -1;
-}
-
 .ripple {
-  position: fixed;
+  position: absolute;
   animation: ripple-big 3.5s infinite;
   border-radius: 100%;
   border: none;
@@ -16,6 +7,7 @@
 
   transition: 0.33s ease-in all;
   opacity: 0;
+  z-index: -10;
 }
 
 .ripple:nth-child(1) {

@@ -11,6 +11,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: max-content;
+}
+
+.choice__chip_box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .choice_user {

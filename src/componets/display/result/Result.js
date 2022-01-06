@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Chip from '../../ui/choice/Chip';
+import Ripple from '../../ui/ripple/Ripple';
 
 import styles from './Result.module.css';
 
@@ -13,8 +14,9 @@ const Result = () => {
     <div className={styles.result}>
       <div className={`${styles.choice} ${styles.choice_user}`}>
         <p className={styles.choice__header}>You picked</p>
-        <div>
+        <div className={styles.choice__chip_box}>
           <Chip type={userChoice} result={true} win={result === 'You win'} />
+          {result === 'You win' && <Ripple />}
         </div>
       </div>
       {result && (

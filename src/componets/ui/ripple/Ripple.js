@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import styles from './Ripple.module.css';
 
 const Ripple = () => {
   return (
-    <div class={styles.container}>
+    <Fragment>
       <div className={styles.ripple}></div>
       <div className={styles.ripple}></div>
       <div className={styles.ripple}></div>
       <div className={styles.ripple}></div>
       <div className={styles.ripple}></div>
-    </div>
+    </Fragment>
   );
 };
 
