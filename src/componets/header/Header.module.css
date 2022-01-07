@@ -31,8 +31,9 @@
 }
 
 .score__heading {
-  color: var(--score-text);
+  color: #56526a;
   font-size: 1.4rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
 }

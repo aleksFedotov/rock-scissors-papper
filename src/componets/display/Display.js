@@ -8,20 +8,20 @@ import styles from './Display.module.css';
 
 const Display = () => {
   const mode = 'bonus';
-  const result = true;
+  const userChoice = 'paper';
 
   let content;
 
-  if (!result) {
+  if (!userChoice) {
     content = mode === 'default' ? <DefaultPicker /> : <BonusPicker />;
-  } else if (result) {
+  } else if (userChoice) {
     content = <Result />;
   }
 
   return (
     <section
       className={`${styles.display} ${mode === 'bonus' && styles.bonus} ${
-        result && styles.result
+        userChoice && styles.result
       }`}
     >
       {content}

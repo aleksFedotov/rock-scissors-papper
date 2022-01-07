@@ -40,7 +40,6 @@ const Chip = (props) => {
       <div className={styles.chip__img}>
         <img src={ImgSource} alt="" />
       </div>
-      {/* {props.win && <Ripple />} */}
     </button>
   );
 };
