@@ -36,6 +36,7 @@
 }
 
 .settings {
+  grid-area: Rules;
   margin-top: 5rem;
   display: flex;
   flex-direction: column;
@@ -94,7 +95,7 @@
 }
 
 .settings__resetBtn {
-  margin-top: 3rem;
+  margin-top: 6rem;
 
   cursor: pointer;
   background-color: transparent;

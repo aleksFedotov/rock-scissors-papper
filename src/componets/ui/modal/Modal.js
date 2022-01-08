@@ -1,10 +1,17 @@
 import React, { Fragment } from 'react';
 import { createPortal } from 'react-dom';
+import { useDispatch } from 'react-redux';
+
+import { modalActions } from '../../../store/modal';
 
 import styles from './Modal.module.css';
 
 const Backdrop = (props) => {
-  return <div className={styles.backdrop} />;
+  const dispatch = useDispatch();
+  const closeModal = () => {
+    dispatch(modalActions.closeModal());
+  };
+  return <div className={styles.backdrop} onClick={closeModal} />;
 };
 
 const ModalOverlay = (props) => {
