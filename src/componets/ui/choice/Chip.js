@@ -1,15 +1,23 @@
 import React from 'react';
 
-import Ripple from '../ripple/Ripple';
+import { useDispatch } from 'react-redux';
+
+import { gameActions } from '../../../store/game';
 
 import styles from './Chip.module.css';
 import rock from '../../../utils/images/icon-rock.svg';
 import scissors from '../../../utils/images/icon-scissors.svg';
-import papper from '../../../utils/images/icon-paper.svg';
+import paper from '../../../utils/images/icon-paper.svg';
 import lizard from '../../../utils/images/icon-lizard.svg';
 import spock from '../../../utils/images/icon-spock.svg';
 
 const Chip = (props) => {
+  const dispatch = useDispatch();
+
+  const userChoiceHandler = () => {
+    dispatch(gameActions.setUserChoice(props.type));
+  };
+
   let ImgSource;
   switch (props.type) {
     case 'rock':
@@ -18,8 +26,8 @@ const Chip = (props) => {
     case 'scissors':
       ImgSource = scissors;
       break;
-    case 'papper':
-      ImgSource = papper;
+    case 'paper':
+      ImgSource = paper;
       break;
     case 'lizard':
       ImgSource = lizard;
@@ -36,6 +44,7 @@ const Chip = (props) => {
       className={`${styles.chip} ${styles[props.type]} ${
         props.mode && styles.bonus
       } ${props.result && styles.result}`}
+      onClick={userChoiceHandler}
     >
       <div className={styles.chip__img}>
         <img src={ImgSource} alt="" />

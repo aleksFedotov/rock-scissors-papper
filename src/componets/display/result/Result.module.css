@@ -112,9 +112,23 @@
   }
 }
 
+@media (max-width: 930px) {
+  .placeholder {
+    width: 15rem;
+    height: 15rem;
+    margin: 2rem;
+  }
+}
+
 @media (max-width: 650px) {
   .result {
     grid-template-areas: 'UserChoice  HouseChoice' 'Result Result';
+  }
+
+  .placeholder {
+    width: 11rem;
+    height: 11rem;
+    margin: 1rem;
   }
 
   .choice {

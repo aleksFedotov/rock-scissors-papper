@@ -11,7 +11,7 @@ const BonusPicker = () => {
       <img className={styles.picker__bg} src={patern} alt="triangle" />
       <Chip type="rock" mode="bonus" />
       <Chip type="scissors" mode="bonus" />
-      <Chip type="papper" mode="bonus" />
+      <Chip type="paper" mode="bonus" />
       <Chip type="lizard" mode="bonus" />
       <Chip type="spock" mode="bonus" />
     </div>

@@ -17,15 +17,25 @@ const Rules = () => {
   const game = useSelector((state) => state.game);
 
   const { rulesIsShowm, settingsIsShowm } = modal;
-  const { mode } = game;
+  const { mode, userChoice } = game;
 
   const closeModal = () => {
     dispatch(modalActions.closeModal());
   };
 
   const modeChangeHandler = (e) => {
+    if (userChoice) {
+      alert(
+        'You cannot change game mode now. Please start a new game to change game mode'
+      );
+      return;
+    }
     const mode = e.target.getAttribute('data-mode');
     dispatch(gameActions.changeMode(mode));
+  };
+
+  const resetScoreHandler = () => {
+    dispatch(gameActions.resetScore());
   };
 
   let content;
@@ -62,7 +72,12 @@ const Rules = () => {
           </li>
         </ul>
 
-        <button className={styles.settings__resetBtn}>Reset Score</button>
+        <button
+          className={styles.settings__resetBtn}
+          onClick={resetScoreHandler}
+        >
+          Reset Score
+        </button>
       </div>
     );
   }

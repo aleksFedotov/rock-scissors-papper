@@ -1,12 +1,15 @@
 import React from 'react';
 
+import { useSelector } from 'react-redux';
+
 import styles from './Header.module.css';
 import DefaultLogo from '../../utils/images/logo.svg';
 import BonusLogo from '../../utils/images/logo-bonus.svg';
 
 const Header = () => {
-  const score = 12;
-  const mode = 'bonus';
+  const game = useSelector((state) => state.game);
+  const { score, mode } = game;
+
   return (
     <header className={styles.header}>
       <div className={styles.logo}>

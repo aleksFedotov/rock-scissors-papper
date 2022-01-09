@@ -10,7 +10,7 @@ const RSPScreen = () => {
       <img className={styles.picker__bg} src={patern} alt="triangle" />
       <Chip type="rock" />
       <Chip type="scissors" />
-      <Chip type="papper" />
+      <Chip type="paper" />
     </div>
   );
 };
