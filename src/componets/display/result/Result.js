@@ -63,19 +63,14 @@ const Result = () => {
   return (
     <div className={styles.result}>
       {/* User choice */}
-      <CSSTransition
-        in={userChoice !== ''}
-        timeout={1000}
-        classNames={styles.userChoice}
-      >
-        <div className={`${styles.choice} ${styles.choice_user}`}>
-          <p className={styles.choice__header}>You picked</p>
-          <div className={styles.choice__chip_box}>
-            <Chip type={userChoice} result={true} />
-            {result === 'You win' && <Ripple />}
-          </div>
+
+      <div className={`${styles.choice} ${styles.choice_user}`}>
+        <p className={styles.choice__header}>You picked</p>
+        <div className={styles.choice__chip_box}>
+          <Chip type={userChoice} result={true} />
+          {result === 'You win' && <Ripple />}
         </div>
-      </CSSTransition>
+      </div>
 
       {/* Result */}
       {result && (
