@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { gameActions } from '../../../store/game';
-import CSSTransition from 'react-transition-group/CSSTransition';
 
 import getHouseChoice from '../../../utils/functions/getHouseChoice';
 import getResult from '../../../utils/functions/getResult';
