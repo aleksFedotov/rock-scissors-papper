@@ -17,19 +17,13 @@ const Rules = () => {
   const game = useSelector((state) => state.game);
 
   const { rulesIsShowm, settingsIsShowm } = modal;
-  const { mode, userChoice } = game;
+  const { mode } = game;
 
   const closeModal = () => {
     dispatch(modalActions.closeModal());
   };
 
   const modeChangeHandler = (e) => {
-    if (userChoice) {
-      alert(
-        'You cannot change game mode now. Please start a new game to change game mode'
-      );
-      return;
-    }
     const mode = e.target.getAttribute('data-mode');
     dispatch(gameActions.changeMode(mode));
   };

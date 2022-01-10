@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { useSelector } from 'react-redux';
+
 import DefaultPicker from './default-picker/DefaultPicker';
 import BonusPicker from './bonus-picker/BonusPicker';
 import Result from './result/Result';
@@ -14,8 +15,10 @@ const Display = () => {
 
   let content;
 
+  const picker = mode === 'default' ? <DefaultPicker /> : <BonusPicker />;
+
   if (!userChoice) {
-    content = mode === 'default' ? <DefaultPicker /> : <BonusPicker />;
+    content = picker;
   } else if (userChoice) {
     content = <Result />;
   }

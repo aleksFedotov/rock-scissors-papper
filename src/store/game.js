@@ -1,8 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const gameSettings = localStorage.getItem('gameSettings');
+
+if (!gameSettings) {
+  const settings = {
+    mode: 'default',
+    score: 0,
+  };
+  localStorage.setItem('gameSettings', JSON.stringify(settings));
+}
+
+const { mode, score } = JSON.parse(gameSettings);
+
 const initialState = {
-  mode: 'default',
-  score: 0,
+  mode,
+  score,
   userChoice: '',
   houseChoice: '',
   result: '',
@@ -14,9 +26,17 @@ const gameSlice = createSlice({
   reducers: {
     changeMode(state, action) {
       state.mode = action.payload;
+      localStorage.setItem(
+        'gameSettings',
+        JSON.stringify({ mode: action.payload, score: state.score })
+      );
     },
     resetScore(state) {
       state.score = 0;
+      localStorage.setItem(
+        'gameSettings',
+        JSON.stringify({ mode: state.mode, score: 0 })
+      );
     },
     setUserChoice(state, action) {
       state.userChoice = action.payload;
@@ -28,7 +48,12 @@ const gameSlice = createSlice({
       state.result = action.payload;
     },
     updateScore(state, action) {
-      state.score = state.score + action.payload;
+      const newScore = state.score + action.payload;
+      state.score = newScore;
+      localStorage.setItem(
+        'gameSettings',
+        JSON.stringify({ mode: state.mode, score: newScore })
+      );
     },
     resetGame(state) {
       state.userChoice = '';

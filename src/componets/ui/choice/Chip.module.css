@@ -181,6 +181,7 @@
 /* Result */
 .result {
   pointer-events: none;
+  transition-property: none;
 }
 
 .chip.result {
