@@ -16,7 +16,7 @@ const Header = () => {
         <img src={mode === 'default' ? DefaultLogo : BonusLogo} alt="Logo" />
       </div>
       <div className={styles.score}>
-        <p className={styles.score__heading}>score</p>
+        <h1 className={styles.score__heading}>score</h1>
         <p className={styles.score__text}>{score}</p>
       </div>
     </header>
