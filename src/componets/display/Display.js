@@ -25,6 +25,7 @@ const Display = () => {
 
   return (
     <section
+      aria-label="display"
       className={`${styles.display} ${mode === 'bonus' && styles.bonus} ${
         userChoice && styles.result
       }`}

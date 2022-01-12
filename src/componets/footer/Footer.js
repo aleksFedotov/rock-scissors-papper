@@ -19,6 +19,7 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <FontAwesomeIcon
+        aria-label="settings"
         icon={faCog}
         className={styles.footer__icon}
         onClick={settingsHandler}
