@@ -1,13 +1,13 @@
 import { render, screen } from '../../../test-utils';
-import * as reactRedux from 'react-redux';
 
 import Header from '../Header';
 
 describe('Header testing', () => {
-  // const useSelectorMock = jest.spyOn(reactRedux, 'useSelector');
-  // beforeEach(() => {
-  //   useSelectorMock.mockClear();
-  // });
+  const createCounter = (initialState) => {
+    const options = { preloadedState: initialState };
+    // render to the screen
+    return render(<Header />, options);
+  };
 
   const setup = () => render(<Header />);
 
@@ -38,16 +38,29 @@ describe('Header testing', () => {
     expect(scoreText.textContent).toBe('0');
   });
 
-  test('Logo changes', () => {
-    setup();
-    // render(<Header />, { initialState: { game: 'bonus' } });
+  test('Logo changes to bonus logo', () => {
+    createCounter({
+      game: {
+        mode: 'bonus',
+        score: 0,
+      },
+    });
 
-    // useSelectorMock.mockReturnValue({ game: { score: 0, mode: 'bonus' } });
+    const logo = screen.getByLabelText('logo');
+
+    expect(logo).toHaveAttribute('src', 'logo-bonus.svg');
+  });
+
+  test('Logo changes to default logo', () => {
+    createCounter({
+      game: {
+        mode: 'default',
+        score: 0,
+      },
+    });
 
     const logo = screen.getByLabelText('logo');
 
     expect(logo).toHaveAttribute('src', 'logo.svg');
-
-    // useSelectorMock.mockClear();
   });
 });

@@ -17,6 +17,7 @@ const Header = () => {
           aria-label="logo"
           src={game.mode === 'default' ? DefaultLogo : BonusLogo}
           alt="Logo"
+          id={game.mode}
         />
       </div>
       <div aria-label="score-display" className={styles.score}>
