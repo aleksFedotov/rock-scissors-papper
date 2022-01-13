@@ -8,16 +8,24 @@ import BonusLogo from '../../utils/images/logo-bonus.svg';
 
 const Header = () => {
   const game = useSelector((state) => state.game);
-  const { score, mode } = game;
+  // const { score, mode } = game;
 
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <img src={mode === 'default' ? DefaultLogo : BonusLogo} alt="Logo" />
+        <img
+          aria-label="logo"
+          src={game.mode === 'default' ? DefaultLogo : BonusLogo}
+          alt="Logo"
+        />
       </div>
-      <div className={styles.score}>
-        <p className={styles.score__heading}>score</p>
-        <p className={styles.score__text}>{score}</p>
+      <div aria-label="score-display" className={styles.score}>
+        <p aria-label="score-header" className={styles.score__heading}>
+          score
+        </p>
+        <p aria-label="score-text" className={styles.score__text}>
+          {game.score}
+        </p>
       </div>
     </header>
   );

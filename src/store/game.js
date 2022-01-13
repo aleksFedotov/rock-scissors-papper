@@ -9,8 +9,13 @@ if (!gameSettings) {
   };
   localStorage.setItem('gameSettings', JSON.stringify(settings));
 }
+let mode = 'default';
+let score = 0;
 
-const { mode, score } = JSON.parse(gameSettings);
+if (gameSettings !== null) {
+  mode = JSON.parse(gameSettings).mode;
+  score = JSON.parse(gameSettings).score;
+}
 
 const initialState = {
   mode,
@@ -62,6 +67,8 @@ const gameSlice = createSlice({
     },
   },
 });
+
+export const selectMode = (state) => state.game.mode;
 
 export const gameActions = gameSlice.actions;
 
