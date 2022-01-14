@@ -3,7 +3,7 @@ import { render, screen } from '../../../test-utils';
 import Header from '../Header';
 
 describe('Header testing', () => {
-  const createCounter = (initialState) => {
+  const createComponent = (initialState) => {
     const options = { preloadedState: initialState };
     // render to the screen
     return render(<Header />, options);
@@ -39,7 +39,7 @@ describe('Header testing', () => {
   });
 
   test('Logo changes to bonus logo', () => {
-    createCounter({
+    createComponent({
       game: {
         mode: 'bonus',
         score: 0,
@@ -52,7 +52,7 @@ describe('Header testing', () => {
   });
 
   test('Logo changes to default logo', () => {
-    createCounter({
+    createComponent({
       game: {
         mode: 'default',
         score: 0,

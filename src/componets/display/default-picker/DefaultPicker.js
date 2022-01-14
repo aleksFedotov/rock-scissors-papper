@@ -6,7 +6,7 @@ import Chip from '../../ui/choice/Chip';
 
 const RSPScreen = () => {
   return (
-    <div className={styles.picker}>
+    <div className={styles.picker} aria-label="default-picker">
       <img className={styles.picker__bg} src={patern} alt="triangle" />
       <Chip type="rock" />
       <Chip type="scissors" />

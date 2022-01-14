@@ -7,7 +7,7 @@ import Chip from '../../ui/choice/Chip';
 
 const BonusPicker = () => {
   return (
-    <div className={styles.picker}>
+    <div className={styles.picker} aria-label="bonus-picker">
       <img className={styles.picker__bg} src={patern} alt="triangle" />
       <Chip type="rock" mode="bonus" />
       <Chip type="scissors" mode="bonus" />

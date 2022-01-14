@@ -61,7 +61,7 @@ const Result = () => {
   };
 
   return (
-    <div className={styles.result}>
+    <div className={styles.result} aria-label="result">
       {/* User choice */}
 
       <div className={`${styles.choice} ${styles.choice_user}`}>
