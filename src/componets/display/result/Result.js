@@ -64,7 +64,10 @@ const Result = () => {
     <div className={styles.result} aria-label="result">
       {/* User choice */}
 
-      <div className={`${styles.choice} ${styles.choice_user}`}>
+      <div
+        className={`${styles.choice} ${styles.choice_user}`}
+        aria-label="user-choice"
+      >
         <p className={styles.choice__header}>You picked</p>
         <div className={styles.choice__chip_box}>
           <Chip type={userChoice} result={true} />
@@ -74,13 +77,16 @@ const Result = () => {
 
       {/* Result */}
       {result && (
-        <div className={styles.status}>
+        <div className={styles.status} aria-label="status">
           <p>{result}</p>
           <button onClick={resetGame}>Play again</button>
         </div>
       )}
       {/* House choice */}
-      <div className={`${styles.choice}  ${styles.choice_house}`}>
+      <div
+        className={`${styles.choice}  ${styles.choice_house}`}
+        aria-label="house-choice"
+      >
         <p className={styles.choice__header}>The house picked</p>
         {result ? (
           <div className={styles.choice__chip_box}>

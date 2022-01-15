@@ -45,9 +45,10 @@ const Chip = (props) => {
         props.mode && styles.bonus
       } ${props.result && styles.result}`}
       onClick={userChoiceHandler}
+      aria-label={`chip-${props.type}`}
     >
       <div className={styles.chip__img}>
-        <img src={ImgSource} alt="" />
+        <img src={ImgSource} alt={props.type} />
       </div>
     </button>
   );
