@@ -96,7 +96,7 @@ const Result = () => {
         ) : tempChip ? (
           <Chip type={tempChip} result={true} />
         ) : (
-          <div className={styles.placeholder}></div>
+          <div className={styles.placeholder} aria-label="placeholder"></div>
         )}
       </div>
     </div>

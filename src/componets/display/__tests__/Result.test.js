@@ -9,6 +9,8 @@ describe('Result component testing', () => {
     return render(<Result />, options);
   };
 
+  jest.useFakeTimers();
+
   test('User choice is rendered', () => {
     createComponent({
       game: {
@@ -44,13 +46,5 @@ describe('Result component testing', () => {
     const chip = screen.getByLabelText(/chip-scissors/i);
 
     expect(chip).toBeInTheDocument();
-  });
-
-  test('Ripple effect is rendering', () => {
-    createComponent({
-      game: {
-        result: 'You win',
-      },
-    });
   });
 });
